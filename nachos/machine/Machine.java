@@ -24,9 +24,9 @@ public final class Machine {
 	Machine.args = args;
 
 	processArgs();
-
+	
+	
 	Config.load(configFileName);
-
 	// get the current directory (.)
 	baseDirectory = new File(new File("").getAbsolutePath());
 	// get the nachos directory (./nachos)

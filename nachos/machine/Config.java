@@ -29,18 +29,19 @@ public final class Config {
 	
 	try {
 	    config = new HashMap<String, String>();
-	
+	    
 	    File file = new File(configFile);
+	    System.out.println("pwd: "+new File("").getAbsolutePath());
 	    Reader reader = new FileReader(file);
 	    StreamTokenizer s = new StreamTokenizer(reader);
-
+	    
 	    s.resetSyntax();
 	    s.whitespaceChars(0x00, 0x20);
 	    s.wordChars(0x21, 0xFF);
 	    s.eolIsSignificant(true);
 	    s.commentChar('#');
 	    s.quoteChar('"');
-
+	    
 	    int line = 1;
 
 	    s.nextToken();
@@ -81,6 +82,7 @@ public final class Config {
 	    }
 	}
 	catch (Throwable e) {
+		e.printStackTrace();
 	    System.err.println("Error loading " + configFile);
 	    System.exit(1);
 	}

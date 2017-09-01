@@ -291,8 +291,7 @@ public class KThread {
 	//Project 1 Task 1 start
 	boolean intStatus = Machine.interrupt().disable();
 	if (joinQueue == null) {
-    // add a queue to store joined on me thread [12/8/2013 HY]
-    // note: join queue should transfer priority 
+    // add a queue to hold the joined thread
     joinQueue = ThreadedKernel.scheduler.newThreadQueue(true);  
     joinQueue.acquire(this);
 	}   
